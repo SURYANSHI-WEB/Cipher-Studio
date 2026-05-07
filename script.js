@@ -291,7 +291,7 @@ async function runSteg() {
       }
       formData.append('message', message);
 
-      var response = await fetch('http://127.0.0.1:5000/api/hide', { method: 'POST', body: formData });
+      var response = await fetch('https://cipher-studio-backend-2dor.onrender.com/api/hide', { method: 'POST', body: formData });
       if (!response.ok) throw new Error('Server returned an error');
 
       // Download the returned image
@@ -309,7 +309,7 @@ async function runSteg() {
 
     } else {
       // Revealing a hidden message from the image
-      var response = await fetch('http://127.0.0.1:5000/api/reveal', { method: 'POST', body: formData });
+      var response = await fetch('https://cipher-studio-backend-2dor.onrender.com/api/reveal', { method: 'POST', body: formData });
       var data = await response.json();
 
       if (data.message) {
