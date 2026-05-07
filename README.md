@@ -6,7 +6,7 @@ An interactive encryption & decryption tool built to explore classic cipher tech
 
 ## 🌐 Live Demo
 
-[cipher-studio.live](https://suryanshi-web.github.io/Cipher-Studio/)
+[suryanshi-web.github.io/Cipher-Studio](https://suryanshi-web.github.io/Cipher-Studio/)
 
 ---
 
@@ -26,6 +26,7 @@ Cipher Studio lets you experience how classic encryption algorithms actually wor
 | Atbash | Encode | Mirrors the alphabet — A↔Z, B↔Y |
 | Base64 | Encode / Decode | Encodes text as ASCII-safe format |
 | Morse Code | Encode / Decode | Converts text to dots and dashes |
+| Steganography | Hide / Reveal | Hides secret text inside an image (LSB method) |
 
 ---
 
@@ -35,6 +36,7 @@ Cipher Studio lets you experience how classic encryption algorithms actually wor
 - Encrypt / Decrypt toggle where applicable
 - Copy output to clipboard
 - Morse Code reference chart
+- LSB image steganography via Python/Flask backend
 - Responsive — works on mobile too
 
 ---
@@ -44,22 +46,32 @@ Cipher Studio lets you experience how classic encryption algorithms actually wor
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)
 
-Pure HTML, CSS, and JavaScript — no frameworks, no dependencies.
+Frontend in pure HTML, CSS, and JavaScript. Steganography feature uses a Python/Flask backend.
 
 ---
 
 ## 📂 Structure
+
 ```
-Encryption-Decryption-App/
+Cipher-Studio/
 ├── index.html   — structure & layout
 ├── style.css    — styling & theme
-└── script.js    — all cipher logic & interactions
+├── script.js    — all cipher logic & interactions
+└── app.py       — Flask backend for steganography
 ```
 
 ---
 
-## 👩‍💻 Author
+## ⚙️ Running Locally
 
-**Suryanshi Singh**  
-[GitHub](https://github.com/SURYANSHI-WEB) · [Portfolio](https://suryanshi-web.github.io/suryanshi-portfolio/)
+The steganography tab requires the Flask server to be running:
+
+```bash
+pip install flask flask-cors pillow
+python app.py
+```
+
+Then open `index.html` in your browser. All other ciphers work without the server.
